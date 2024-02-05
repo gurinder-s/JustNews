@@ -42,4 +42,37 @@ class NetworkManager{
         }
         task.resume()
     }
+    
+    
+    func fetchStory(uuid:String, completed: @escaping(Result<NewsModel, JNError>) -> Void){
+        let endpoint = baseURL + "uuid/\(uuid)?api_token=" + apiToken
+        guard let url = URL(string: endpoint) else{
+            completed(.failure(.unableToComplete))
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) {data,response,error in
+            if let _ = error{
+                completed(.failure(.unableToComplete))
+                return
+            }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else{
+                completed(.failure(.unableToComplete))
+                return
+            }
+            guard let data = data else{
+                completed(.failure(.invalidData))
+                return
+            }
+            do{
+                let decoder = JSONDecoder()
+                print(data)
+                let story = try decoder.decode(NewsModel.self,from:data)
+                completed(.success(story))
+            }catch let error{
+                print(error)
+                completed(.failure(.cantDecode))
+            }
+        }
+        task.resume()
+    }
 }

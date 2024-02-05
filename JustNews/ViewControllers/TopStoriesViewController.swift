@@ -47,7 +47,7 @@ class TopStoriesViewController: UIViewController {
         NetworkManager.shared.fetchTopStories(page: page){ [weak self] result in
             switch result{
             case .success(let newsresponse):
-                print(newsresponse.data)
+                //print(newsresponse.data)
                 self?.topStories.append(contentsOf: newsresponse.data)
                 self?.updateData()
             case .failure(let error):
@@ -95,6 +95,7 @@ extension TopStoriesViewController: UICollectionViewDelegate{
         let storyId = story.uuid
         print("Selected story: \(story.title)")
         let newsStoryVC = NewsStoryViewController()
+        newsStoryVC.newsStoryUUID = storyId
         //present(newsStoryVC, animated: true)
         navigationController?.pushViewController(newsStoryVC, animated: true)
     }

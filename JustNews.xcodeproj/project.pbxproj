@@ -24,6 +24,9 @@
 		06C151442B70394C003EE0A9 /* JNTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C151432B70394C003EE0A9 /* JNTitleLabel.swift */; };
 		06C151462B703A5D003EE0A9 /* SectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C151452B703A5D003EE0A9 /* SectionEnum.swift */; };
 		06C151482B705923003EE0A9 /* NewsStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C151472B705923003EE0A9 /* NewsStoryViewController.swift */; };
+		06C1514B2B706BCE003EE0A9 /* JNSecondaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1514A2B706BCE003EE0A9 /* JNSecondaryLabel.swift */; };
+		06C1514D2B706DF5003EE0A9 /* JNBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1514C2B706DF5003EE0A9 /* JNBodyLabel.swift */; };
+		06C1514F2B707CBC003EE0A9 /* JNNewsTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1514E2B707CBC003EE0A9 /* JNNewsTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		06C151432B70394C003EE0A9 /* JNTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNTitleLabel.swift; sourceTree = "<group>"; };
 		06C151452B703A5D003EE0A9 /* SectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEnum.swift; sourceTree = "<group>"; };
 		06C151472B705923003EE0A9 /* NewsStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoryViewController.swift; sourceTree = "<group>"; };
+		06C1514A2B706BCE003EE0A9 /* JNSecondaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNSecondaryLabel.swift; sourceTree = "<group>"; };
+		06C1514C2B706DF5003EE0A9 /* JNBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNBodyLabel.swift; sourceTree = "<group>"; };
+		06C1514E2B707CBC003EE0A9 /* JNNewsTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNNewsTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 		06C150FA2B700388003EE0A9 /* JustNews */ = {
 			isa = PBXGroup;
 			children = (
+				06C151492B706569003EE0A9 /* Models */,
 				06C1513D2B7036A4003EE0A9 /* Views */,
 				06C151372B700958003EE0A9 /* Network */,
 				06C151342B7008C7003EE0A9 /* Utilities */,
@@ -124,7 +131,6 @@
 				06C151042B700389003EE0A9 /* Assets.xcassets */,
 				06C151062B700389003EE0A9 /* LaunchScreen.storyboard */,
 				06C151092B700389003EE0A9 /* Info.plist */,
-				06C151302B70070C003EE0A9 /* NewsModel.swift */,
 			);
 			path = JustNews;
 			sourceTree = "<group>";
@@ -179,8 +185,19 @@
 				06C1513E2B7036D8003EE0A9 /* StoryViewCell.swift */,
 				06C151412B70382A003EE0A9 /* JNStoryImageView.swift */,
 				06C151432B70394C003EE0A9 /* JNTitleLabel.swift */,
+				06C1514A2B706BCE003EE0A9 /* JNSecondaryLabel.swift */,
+				06C1514C2B706DF5003EE0A9 /* JNBodyLabel.swift */,
+				06C1514E2B707CBC003EE0A9 /* JNNewsTitle.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		06C151492B706569003EE0A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				06C151302B70070C003EE0A9 /* NewsModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06C151332B700787003EE0A9 /* NetworkManager.swift in Sources */,
+				06C1514F2B707CBC003EE0A9 /* JNNewsTitle.swift in Sources */,
 				06C151442B70394C003EE0A9 /* JNTitleLabel.swift in Sources */,
 				06C151362B7008DA003EE0A9 /* JustNewsNetworkErrors.swift in Sources */,
 				06C1513F2B7036D8003EE0A9 /* StoryViewCell.swift in Sources */,
@@ -321,6 +339,8 @@
 				06C151482B705923003EE0A9 /* NewsStoryViewController.swift in Sources */,
 				06C1512F2B700589003EE0A9 /* TopStoriesViewController.swift in Sources */,
 				06C1512D2B70054F003EE0A9 /* FavouritesViewController.swift in Sources */,
+				06C1514D2B706DF5003EE0A9 /* JNBodyLabel.swift in Sources */,
+				06C1514B2B706BCE003EE0A9 /* JNSecondaryLabel.swift in Sources */,
 				06C150FC2B700388003EE0A9 /* AppDelegate.swift in Sources */,
 				06C150FE2B700388003EE0A9 /* SceneDelegate.swift in Sources */,
 				06C151312B70070C003EE0A9 /* NewsModel.swift in Sources */,

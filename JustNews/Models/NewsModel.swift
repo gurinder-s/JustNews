@@ -25,7 +25,7 @@ struct NewsModel: Codable, Hashable{
     let source: String
     let categories: [String]
     let relevanceScore: Int?
-    let locale: String
+    let locale: String?
     
     enum CodingKeys: String, CodingKey{
         case uuid,title,description,keywords,snippet,url,language,source,categories,locale
