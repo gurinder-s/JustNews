@@ -24,6 +24,7 @@ class StoryViewCell: UICollectionViewCell {
     
     func set(newsstory: NewsModel){
         newsStoryTitle.text = newsstory.title
+        newsStoryImage.downloadImage(from: newsstory.imageURL)
     }
     
     private func configure(){
@@ -32,7 +33,7 @@ class StoryViewCell: UICollectionViewCell {
         addSubview(newsStoryTitle)
         
         NSLayoutConstraint.activate([
-            newsStoryImage.topAnchor.constraint(equalTo: topAnchor, constant: padding),
+            newsStoryImage.topAnchor.constraint(equalTo: topAnchor, constant: padding+10),
             newsStoryImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
             newsStoryImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             newsStoryImage.heightAnchor.constraint(equalTo: newsStoryImage.widthAnchor),

@@ -14,12 +14,13 @@ class TopStoriesViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section,NewsModel>!
     // Top Stories
     var topStories: [NewsModel] = []
+    var page = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
-        getTopStories()
+        getTopStories(page: page)
         configureDataSource()
     }
     
@@ -42,13 +43,13 @@ class TopStoriesViewController: UIViewController {
         return flowLayout
     }
     
-    func getTopStories(){
-        NetworkManager.shared.fetchTopStories(){ result in
+    func getTopStories(page: Int){
+        NetworkManager.shared.fetchTopStories(page: page){ [weak self] result in
             switch result{
             case .success(let newsresponse):
                 print(newsresponse.data)
-                self.topStories = newsresponse.data
-                self.updateData()
+                self?.topStories.append(contentsOf: newsresponse.data)
+                self?.updateData()
             case .failure(let error):
                 print(error)
             }
@@ -79,8 +80,34 @@ class TopStoriesViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(StoryViewCell.self, forCellWithReuseIdentifier: StoryViewCell.reuseID)
+        collectionView.delegate = self
     }
     
     
+    
+}
+
+extension TopStoriesViewController: UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Get the tapped news story
+        let story = topStories[indexPath.row]
+        let storyId = story.uuid
+        print("Selected story: \(story.title)")
+        let newsStoryVC = NewsStoryViewController()
+        //present(newsStoryVC, animated: true)
+        navigationController?.pushViewController(newsStoryVC, animated: true)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight-height{
+            page += 1
+            getTopStories(page: page)
+        }
+    }
     
 }

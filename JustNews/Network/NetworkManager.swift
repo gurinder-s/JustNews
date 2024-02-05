@@ -13,8 +13,8 @@ class NetworkManager{
     private init(){}
     private let apiToken = "SMlMaWVpbElU69HJc2iiwEZ8URed8I2082G9K4Pi"
     
-    func fetchTopStories(completed: @escaping(Result<NewsResponse, JNError>) -> Void){
-        let endpoint = baseURL + "top?api_token=" + apiToken + "&locale=us&limit=3"
+    func fetchTopStories(page:Int, completed: @escaping(Result<NewsResponse, JNError>) -> Void){
+        let endpoint = baseURL + "top?api_token=" + apiToken + "&locale=us&limit=3&page=\(page)"
         guard let url = URL(string: endpoint) else{
             completed(.failure(.unableToComplete))
             return

@@ -23,6 +23,7 @@
 		06C151422B70382A003EE0A9 /* JNStoryImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C151412B70382A003EE0A9 /* JNStoryImageView.swift */; };
 		06C151442B70394C003EE0A9 /* JNTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C151432B70394C003EE0A9 /* JNTitleLabel.swift */; };
 		06C151462B703A5D003EE0A9 /* SectionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C151452B703A5D003EE0A9 /* SectionEnum.swift */; };
+		06C151482B705923003EE0A9 /* NewsStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C151472B705923003EE0A9 /* NewsStoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		06C151412B70382A003EE0A9 /* JNStoryImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNStoryImageView.swift; sourceTree = "<group>"; };
 		06C151432B70394C003EE0A9 /* JNTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNTitleLabel.swift; sourceTree = "<group>"; };
 		06C151452B703A5D003EE0A9 /* SectionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEnum.swift; sourceTree = "<group>"; };
+		06C151472B705923003EE0A9 /* NewsStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				06C1512C2B70054F003EE0A9 /* FavouritesViewController.swift */,
 				06C1512E2B700589003EE0A9 /* TopStoriesViewController.swift */,
+				06C151472B705923003EE0A9 /* NewsStoryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				06C151362B7008DA003EE0A9 /* JustNewsNetworkErrors.swift in Sources */,
 				06C1513F2B7036D8003EE0A9 /* StoryViewCell.swift in Sources */,
 				06C151462B703A5D003EE0A9 /* SectionEnum.swift in Sources */,
+				06C151482B705923003EE0A9 /* NewsStoryViewController.swift in Sources */,
 				06C1512F2B700589003EE0A9 /* TopStoriesViewController.swift in Sources */,
 				06C1512D2B70054F003EE0A9 /* FavouritesViewController.swift in Sources */,
 				06C150FC2B700388003EE0A9 /* AppDelegate.swift in Sources */,
